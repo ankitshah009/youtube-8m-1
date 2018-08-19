@@ -1,0 +1,6 @@
+trainingInput:
+  scaleTier: CUSTOM
+  masterType: standard_gpu
+  runtimeVersion: "1.8"
+  pythonVersion: "3.5"
+

@@ -1,0 +1,12 @@
+
+
+python train.py --train_data_pattern="/home/tianqi/Documents/Kaggle/youtube8m/data/yt8m/frame/train*.tfrecord,/home/tianqi/Documents/Kaggle/youtube8m/data/yt8m/frame/validate*.tfrecord" --model=NetVLADModelLF --train_dir /media/tianqi/Elements/youtube8m/models/frame/NetVLAD/c${cs}h${hs} --frame_features --feature_names='rgb,audio' --feature_sizes='1024,128' --batch_size=128 --base_learning_rate=0.0001 --netvlad_cluster_size=${cs} --netvlad_hidden_size=${hs} --moe_l2=1e-6 --iterations=300 --learning_rate_decay=0.8 --netvlad_relu=False --gating=True --moe_prob_gating=True --max_steps=500000 --export_model_steps=10000
+
+
+
+gcloud ml-engine local train \
+--package-path=tianqi --module-name=tianqi.train -- \
+--train_data_pattern='gs://youtube8m-ml/2/frame/train/train*.tfrecord' \
+--train_dir=/media/tianqi/Elements/youtube8m/models/frame/NetVLAD/gcloud --frame_features --feature_names='rgb,audio' --feature_sizes='1024,128' --batch_size=128 base_learning_rate=0.0001 --netvlad_cluster_size=16 --netvlad_hidden_size=1024 --moe_l2=1e-6 --iterations=300 --learning_rate_decay=0.8 --netvlad_relu=False --gating=True --moe_prob_gating=True --max_steps=500000 --export_model_steps=10000
+
+

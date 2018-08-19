@@ -1,0 +1,1 @@
+python "/home/tianqi/anaconda3/envs/youtube8m/lib/python3.6/site-packages/tensor2tensor/utils/avg_checkpoints.py" --checkpoints="120010,130010,134441" --prefix="/media/tianqi/samsung970/youtube8m/models/frame/NetVLAD_param_tune/c32h400/model.ckpt-" --output_path="/media/tianqi/samsung970/youtube8m/models/frame/NetVLAD_param_tune/c32h400/avg_120010_130010_134441.ckpt"
